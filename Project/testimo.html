@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="navbar-container container">
+                <input type="checkbox" name="" id="">
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                <ul class="menu-items">
+                    <li><a href="main.html">Home Page</a></li>
+                    <li><a href="service.html">Service Page</a></li>
+                    <li><a href="team.html">Team Page</a></li>
+                    <li><a href="careerpage.html">Careers Page</a></li>
+                    <li><a href="contactpage.html">Contact Page</a></li>
+                    <li><a href="testimo.html">Testimonials Page</a></li>
+                </ul>
+                
+            </div>
+        </nav>
+    </body>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Testimonials</title>
+    <link rel="stylesheet" href="testimonial.css">
+</head>
+<body>
+    <div class="container">
+        <div class="testimonials-box">
+            <h1>Client Testimonials</h1>
+
+            <!-- Testimonials Carousel -->
+            <div id="testimonialCarousel" class="carousel">
+                <div class="carousel-item">
+                    <p>"This service is amazing! My business has grown exponentially thanks to their help!"</p>
+                    <h4>John Doe</h4>
+                    <div class="stars">
+                        ★★★★☆
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <p>"A fantastic experience from start to finish. Highly recommended!"</p>
+                    <h4>Jane Smith</h4>
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <p>"The best decision I made for my company. They are true professionals!"</p>
+                    <h4>Michael Johnson</h4>
+                    <div class="stars">
+                        ★★★★☆
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="prev" onclick="changeTestimonial(-1)">&#10094;</button>
+                <button class="next" onclick="changeTestimonial(1)">&#10095;</button>
+            </div>
+        </div>
+
+        <div class="testimonial-form-box">
+            <!-- Testimonial Submission Form -->
+            <h2>Submit Your Testimonial</h2>
+            <form id="testimonialForm">
+                <textarea id="testimonialText" placeholder="Write your testimonial..." required></textarea>
+                <input type="text" id="clientName" placeholder="Your name" required>
+
+                <!-- Rating System -->
+                <div class="rating">
+                    <label for="rating">Rate Us:</label>
+                    <div class="stars">
+                        <span class="star" onclick="selectRating(1)">&#9733;</span>
+                        <span class="star" onclick="selectRating(2)">&#9733;</span>
+                        <span class="star" onclick="selectRating(3)">&#9733;</span>
+                        <span class="star" onclick="selectRating(4)">&#9733;</span>
+                        <span class="star" onclick="selectRating(5)">&#9733;</span>
+                    </div>
+                    <input type="hidden" id="ratingValue" name="rating" value="0" required>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+            <p id="thankYouMessage" class="thank-you-message">Thank you for your testimonial!</p>
+        </div>
+    </div>
+
+    <script src="tp.js"></script>
+</body>
+</html>

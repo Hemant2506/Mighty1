@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="navbar-container container">
+                <input type="checkbox" name="" id="">
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                <ul class="menu-items">
+                    <li><a href="main.html">Home Page</a></li>
+                    <li><a href="service.html">Service Page</a></li>
+                    <li><a href="team.html">Team Page</a></li>
+                    <li><a href="careerpage.html">Careers Page</a></li>
+                    <li><a href="contactpage.html">Contact Page</a></li>
+                    <li><a href="testimo.html">Testimonials Page</a></li>
+                </ul>
+                
+            </div>
+        </nav>
+    </body>
+
+    <title>Form</title>
+    <link rel="stylesheet" href="fromapplication.css" />
+  </head>
+  
+  <body>
+      <section class="main-body">
+        <div class="heading">
+            <h1>Job Application</h1>
+            <p>Please complete the form below to apply for a position with us.</p>
+            <hr>
+        </div>
+        <div class="app-form">
+            <label for="fname">Full Name</label><br>
+            <form action="#" method="post" class="candidate-name">
+                <input type="text" name="fname" id="fname" placeholder="First Name">
+                <input type="text" name="fname" id="fname" placeholder="Middle Name">
+                <input type="text" name="fname" id="fname" placeholder="Last Name">
+            </form>
+
+            <label for="dob-month">Birth Date</label><br>
+            <form action="#" class="dob">
+                <select name="dob-month" id="dob-month">
+                    <option value="">Month</option>
+                    <option value="">A</option>
+                    <option value="">A</option>
+                    <option value="">A</option>
+                </select>
+                <select name="dob-date" id="dob-date">
+                    <option value="">Day</option>
+                    <option value="">A</option>
+                    <option value="">A</option>
+                    <option value="">A</option>
+                </select>
+                <select name="dob-year" id="dob-year">
+                    <option value="">Year</option>
+                    <option value="">A</option>
+                    <option value="">A</option>
+                    <option value="">A</option>
+                </select>
+            </form>
+
+            <label for="address">Current Address</label><br>
+            <form action="#" class="address-1">
+                <input class="strt-1" type="text" name="address" id="address" placeholder="Street Address">
+                <input class="strt-2" type="text" name="address" id="address" placeholder="Street Address Line 2">
+            </form>
+            <form action="#" class="address-2">
+                <input class="city" type="text" name="address" id="address" placeholder="City">
+                <input class="state" type="text" name="address" id="address" placeholder="State / Province">
+            </form>
+            <form action="#" class="address-3">
+                <input class="postal" type="text" name="address" id="address" placeholder="Postal / Zip Code">
+            </form>
+
+            <form action="#" class="email-address">
+                <div class="email-add">
+                    <label for="email">Email Address</label>
+                    <br>
+                    <input type="text" name="address" id="address" placeholder="ex: myname@example.com"><br>
+                </div>
+                <div class="phone-num">
+                    <label for="phone">Phone Number</label>
+                    <br>
+                    <input type="text" name="phone" id="phone" placeholder="+91 00000 00000"><br>
+                </div>
+            </form>
+
+            <form action="#" class="linkedIn">
+                <label for="linked">LinkedIn</label><br>
+                <input type="text" name="linked" id="linked">
+                <hr>
+            </form>
+        </div>
+
+        <div class="job-applying">
+            <form action="#" class="pos-applying">
+                <div class="pos-applied">
+                    <label for="position">Position Applied</label><br>
+                    <select name="position" id="position">
+                        <option value="">Please Select</option>
+                        <option value="">Marketing Specialist</option>
+                        <option value="">Sales Manager</option>
+                        <option value="">Product Development</option>
+                        <option value="">Software Developer</option>
+                    </select>
+                </div>
+                <div class="pos-applied-hear">
+                    <label for="hear">How did you hear about us ?</label><br>
+                    <select name="hear" id="hear">
+                        <option value="">Please Select</option>
+                        <option value="">LinkedIn</option>
+                        <option value="">Event</option>
+                        <option value="">Social Media</option>
+                        <option value="">Company Website</option>
+                        <option value="">Other</option>
+                    </select>
+                </div>
+            </form>
+
+            <form action="#" class="start-date">
+                <label for="start">Available Start Date</label><br>
+                <input type="date" id="start" name="start">
+            </form>
+
+            <label for="myFile">Upload Your Resume</label><br>
+            <form action="#" class="file-upload">
+                <input type="file" id="myFile" name="filename">
+            </form>
+
+            <label for="textArea">Cover Letter</label><br>
+            <form action="#" class="text-area">
+                <textarea name="textArea" id="textArea"></textarea>
+            </form>
+            <hr>
+        </div>
+
+        <div class="submit-form">
+            <form action="#" class="apply-btn">
+                <input type="submit" name="btn" id="btn">
+            </form>
+        </div>
+    </section>
+      <script src="fa.js"></script>
+  </body>
+</html>

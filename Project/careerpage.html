@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+              <li><a href="main.html">Home Page</a></li>
+              <li><a href="service.html">Service Page</a></li>
+              <li><a href="team.html">Team Page</a></li>
+              <li><a href="careerpage.html">Careers Page</a></li>
+              <li><a href="contactpage.html">Contact Page</a></li>
+              <li><a href="testimo.html">Testimonials Page</a></li>
+            </ul>
+            
+        </div>
+    </nav>
+</body>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers Page</title>
+  <link rel="stylesheet" href="career.css">
+</head>
+<body>
+
+  <header>
+    <h1>Join Our Team</h1>
+    <p>Your dream job awaits. Apply now!</p>
+  </header>
+
+  <section class="job-application">
+    <h2>Job Application Form</h2>
+    <form id="jobApplicationForm" onsubmit="return validateForm()">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" placeholder="Enter your city" required>
+      </div>
+
+      <div class="form-group">
+        <label for="other">Other Information</label>
+        <input type="text" id="other" name="other" placeholder="Any additional info?">
+      </div>
+
+      <div class="form-group">
+        <label for="jobRole">Select Job Role</label>
+        <select id="jobRole" name="jobRole" required>
+          <option value="">Select a role</option>
+          <option value="developer">Software Developer</option>
+          <option value="designer">UI/UX Designer</option>
+          <option value="manager">Project Manager</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="resume">Upload Resume</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+  </section>
+
+  <section class="current-openings">
+    <h2>Current Job Openings</h2>
+    <div id="openingsList" class="openings-list">
+      <!-- Job roles will be dynamically listed here -->
+    </div>
+  </section>
+
+  <script src="cr.js"></script>
+</body>
+</html>
