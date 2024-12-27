@@ -1,69 +1,54 @@
-let currentTestimonialIndex = 0;
+// script.js
 
-const testimonials = document.querySelectorAll('.carousel-item');
-const totalTestimonials = testimonials.length;
+let currentIndex = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+const testimonialForm = document.getElementById('testimonialForm');
+const testimonialSlider = document.querySelector('.testimonial-slider');
 
+// Show the active testimonial
 function showTestimonial(index) {
-    if (index >= totalTestimonials) {
-        currentTestimonialIndex = 0;
-    } else if (index < 0) {
-        currentTestimonialIndex = totalTestimonials - 1;
-    } else {
-        currentTestimonialIndex = index;
+  testimonials.forEach((testimonial, i) => {
+    testimonial.classList.remove('active');
+    if (i === index) {
+      testimonial.classList.add('active');
     }
-
-    testimonials.forEach((testimonial, idx) => {
-        testimonial.style.display = idx === currentTestimonialIndex ? 'block' : 'none';
-    });
+  });
 }
 
-function changeTestimonial(direction) {
-    showTestimonial(currentTestimonialIndex + direction);
-}
-
-showTestimonial(currentTestimonialIndex);
-
-// Handle Rating System
-let selectedRating = 0;
-
-function selectRating(rating) {
-    selectedRating = rating;
-    const stars = document.querySelectorAll('.rating .star');
-    stars.forEach((star, index) => {
-        star.classList.toggle('selected', index < rating);
-    });
-    document.getElementById('ratingValue').value = rating;
-}
-
-// Testimonial submission form
-const form = document.getElementById('testimonialForm');
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const testimonialText = document.getElementById('testimonialText').value;
-    const clientName = document.getElementById('clientName').value;
-    const rating = selectedRating;
-
-    if (testimonialText && clientName && rating > 0) {
-        const newTestimonial = document.createElement('div');
-        newTestimonial.classList.add('carousel-item');
-        newTestimonial.innerHTML = `<p>"${testimonialText}"</p><h4>${clientName}</h4><div class="stars">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</div>`;
-
-        document.getElementById('testimonialCarousel').appendChild(newTestimonial);
-        document.getElementById('testimonialText').value = '';
-        document.getElementById('clientName').value = '';
-        document.getElementById('ratingValue').value = 0;
-        selectedRating = 0;
-        document.getElementById('thankYouMessage').style.display = 'block';
-
-        // Hide thank you message after 3 seconds
-        setTimeout(function() {
-            document.getElementById('thankYouMessage').style.display = 'none';
-        }, 3000);
-
-        // Update carousel to show the new testimonial
-        showTestimonial(totalTestimonials);
-    } else {
-        alert('Please provide a testimonial and select a rating!');
-    }
+// Navigate testimonials
+prevButton.addEventListener('click', () => {
+  currentIndex = currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1;
+  showTestimonial(currentIndex);
 });
+
+nextButton.addEventListener('click', () => {
+  currentIndex = currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1;
+  showTestimonial(currentIndex);
+});
+
+// Submit a new testimonial
+testimonialForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // Get input values
+  const text = document.getElementById('testimonialText').value;
+  const name = document.getElementById('testimonialName').value;
+
+  // Create a new testimonial element
+  const newTestimonial = document.createElement('div');
+  newTestimonial.classList.add('testimonial');
+  newTestimonial.innerHTML = `<p>"${text}"</p><h3>– ${name}</h3>`;
+
+  // Add the new testimonial to the slider
+  testimonialSlider.appendChild(newTestimonial);
+
+  // Clear the form
+  testimonialForm.reset();
+
+  alert('Your testimonial has been added!');
+});
+
+// Initialize the first testimonial
+showTestimonial(currentIndex);
